@@ -327,7 +327,7 @@ export class Formik<
     }
 
     if (this.props.validate) {
-      const maybePromisedErrors = (this.props.validate as any)(values);
+      const maybePromisedErrors = (this.props.validate as any)(values, this.props);
       if (isPromise(maybePromisedErrors)) {
         (maybePromisedErrors as Promise<any>).then(
           () => {
